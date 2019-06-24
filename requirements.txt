@@ -7,3 +7,6 @@ requests==2.21.0
 
 # -- dataframe based data exploration library
 pandas==0.24.2
+
+# -- for working with parquet data
+fastparquet==0.3.1

@@ -1,0 +1,9 @@
+{
+    "name": "lakey-client",
+    "src_dir": "lakey_client",
+    "repository": "https://github.com/cosphere-org/lakey-client",
+    "version": "0.0.1",
+    "last_commit_hash": "... THIS WILL BE FILLED AUTOMATICALLY ...",
+    "next_version": null,
+    "next_last_commit_hash": null
+}
