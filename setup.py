@@ -1,6 +1,6 @@
 import json
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -35,12 +35,14 @@ with open(os.path.join(BASE_DIR, '.lily', 'config.json')) as f:
 # -- SETUP
 setup(
     name=config['name'],
+    packages=[config['name']],
     description=(
         'Lakey Client for interacting with lakey from jupyter notebook'),
     url=config['repository'],
     version=config['version'],
     author='CoSphere Team',
-    packages=find_packages(),
     install_requires=requirements,
     package_data={'': ['requirements.txt']},
-    include_package_data=True)
+    include_package_data=True,
+    keywords=['lakey', 'client'],
+    classifiers=[])

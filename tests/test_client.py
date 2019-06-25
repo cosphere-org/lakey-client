@@ -21,11 +21,11 @@ class LakeyClientTestCase(TestCase):
     def initifixtures(self, mocker):
         self.mocker = mocker
 
-    def test_download_to_df(self):
+    def test_download(self):
 
         download = self.mocker.patch.object(ADLSDownloader, 'download')
         download.return_value = '... replace with correct parquet ...'
 
-        df = LakeyClient().download_to_df(14)
+        df = LakeyClient().download(14)
 
         assert df == []
