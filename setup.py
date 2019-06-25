@@ -35,14 +35,20 @@ with open(os.path.join(BASE_DIR, '.lily', 'config.json')) as f:
 # -- SETUP
 setup(
     name=config['name'],
-    packages=[config['name']],
+    packages=['lakey_client'],
     description=(
         'Lakey Client for interacting with lakey from jupyter notebook'),
     url=config['repository'],
     version=config['version'],
     author='CoSphere Team',
     install_requires=requirements,
-    package_data={'': ['requirements.txt']},
+    data_files=[(
+        'lakey_client',
+        [
+            'requirements.txt',
+            '.lily/config.json',
+        ],
+    )],
     include_package_data=True,
     keywords=['lakey', 'client'],
     classifiers=[])

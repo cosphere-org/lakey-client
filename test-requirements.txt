@@ -23,3 +23,6 @@ jupyter==1.0.0
 
 # -- for testing / debugging
 ipdb==0.12
+
+# -- for uploading to pypi
+twine==1.13.0
