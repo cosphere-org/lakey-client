@@ -2,8 +2,8 @@
     "name": "lakey-client",
     "src_dir": "lakey_client",
     "repository": "https://github.com/cosphere-org/lakey-client",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "next_version": null,
-    "last_commit_hash": "4b39758535a56d3d33027431512cd02bc856cea6",
+    "last_commit_hash": "a72413692a10cb1748b01fafc659b7b1b14d3d1a",
     "next_last_commit_hash": null
 }
