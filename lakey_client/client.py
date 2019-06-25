@@ -8,18 +8,9 @@ from .adls_downloader import ADLSDownloader
 
 class LakeyClient:
 
-    def download_to_df(self, path):
+    def download_to_df(self, index):
 
-        global LAKEY_ACCESS_TOKEN
-        global LAKEY_ADLS_ACCOUNTNAME
-        global LAKEY_ADLS_FILESYSTEM
-
-        downloader = ADLSDownloader(
-            account_name=LAKEY_ADLS_ACCOUNTNAME,
-            filesystem=LAKEY_ADLS_FILESYSTEM,
-            access_token=LAKEY_ACCESS_TOKEN)
-
-        content = downloader.download(path)
+        content = ADLSDownloader().download(index)
 
         return pd.read_parquet(
             BytesIO(content),

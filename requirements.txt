@@ -10,3 +10,6 @@ pandas==0.24.2
 
 # -- for working with parquet data
 fastparquet==0.3.1
+
+# -- progress bar
+tqdm==4.32.2

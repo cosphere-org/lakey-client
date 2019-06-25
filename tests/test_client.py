@@ -26,6 +26,6 @@ class LakeyClientTestCase(TestCase):
         download = self.mocker.patch.object(ADLSDownloader, 'download')
         download.return_value = '... replace with correct parquet ...'
 
-        df = LakeyClient().download_to_df()
+        df = LakeyClient().download_to_df(14)
 
         assert df == []

@@ -41,6 +41,7 @@ sphinx-output
 .venv*
 .cache
 .pytest_cache
+.ipynb_checkpoints
 
 # Settings overrides
 settings_local.py
