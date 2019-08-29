@@ -40,7 +40,7 @@ class LakeyClient:
         return (f'<div style="display: block; width: 100%; height: 100px; '
                 f'background-color: blue; text-align: center;"> '
                 f'<b style="color: white;">{size} MB</b> '
-                f'</div> ')
+                f'</div>')
 
     def download(self, name, spec):
 
