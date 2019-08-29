@@ -58,7 +58,7 @@ class LakeyClient:
 
         chunk_dfs = []
         for chunk in response.json()['chunks']:
-            chunk_df = pd.read_parquet(chunk['data_path'], engine='pyarrow')
+            chunk_df = pd.read_parquet(chunk['data_path'], engine='pyarrow' )
 
             for f in spec['filters']:
                 chunk_df = chunk_df[
