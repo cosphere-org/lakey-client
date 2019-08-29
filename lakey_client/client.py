@@ -36,10 +36,25 @@ class LakeyClient:
                 'catalogue_item_name': name
             })
 
-        size = int(response.json()['estimated_size']) / 1000000
-        return (f'<div style="display: block; width: 100%; height: 100px; '
-                f'background-color: blue; text-align: center;"> '
-                f'<b style="color: white;">{size} MB</b> '
+        ci_response = requests.get(
+            os.path.join(
+                self.base_uri,
+                'catalogue/items/'),
+            data={
+                'name': name
+            },
+            headers={
+                'Authorization': f'Bearer {self.auth_token}'  # noqa
+            })
+
+        ci_size = 0
+        for col in ci_response.json()['items'][0]['spec']:
+            ci_size += int(int(col['size']) / 1000000)
+
+        size = int(int(response.json()['estimated_size']) / 1000000)
+        return (f'<div style="display: block; width: 100%; height: 60px; padding-top: 21px;'
+                f'background-color: blue; text-align: center; font-size: 40px;"> '
+                f'<b style="color: white;">{size} MB / {ci_size} MB</b> '
                 f'</div>')
 
     def download(self, name, spec):
